@@ -60,4 +60,15 @@ public class User implements Serializable {
         this.email = "chaitudeshpande6@gmail.com";
         this.bio = "Hi I'm Chaitanya and I love to build Android and Web Applications";
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", bio='" + bio + '\'' +
+                '}';
+    }
 }
