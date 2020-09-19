@@ -10,6 +10,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -108,7 +109,12 @@ public class EditActivity extends AppCompatActivity {
                             break;
                         case "1":
                             EditText phoneNumberEditText = fragment.getView().findViewById(R.id.edit_value_tv);
-                            user.setPhone(phoneNumberEditText.getText().toString().replaceAll("[^\\d]", ""));
+                            String parsedPhoneNumber = phoneNumberEditText.getText().toString().replaceAll("[^\\d]", "");
+                            if(parsedPhoneNumber.length() == 10) {
+                                user.setPhone(parsedPhoneNumber);
+                            } else {
+                                Toast.makeText(EditActivity.this, "Please enter valid phone number!", Toast.LENGTH_SHORT).show();
+                            }
                             setResult(MainActivity.RESULT_CODE, getIntent().putExtra(MainActivity.OBJECT_KEY, user));
                             finish();
                             break;
@@ -137,6 +143,13 @@ public class EditActivity extends AppCompatActivity {
                 }
             });
 
+            binding.getRoot().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    hideSoftKeyBoard();
+                }
+            });
+
         }
     }
 
@@ -151,6 +164,14 @@ public class EditActivity extends AppCompatActivity {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.PNG, MainActivity.IMAGE_QUALITY, baos);
             bytes = baos.toByteArray();
+        }
+    }
+
+    private void hideSoftKeyBoard() {
+        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+
+        if(imm.isAcceptingText()) { // verify if the soft keyboard is open
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         }
     }
 

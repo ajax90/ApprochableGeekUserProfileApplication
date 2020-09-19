@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,6 +65,11 @@ public class EditNameFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentEditNameBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
+
+        binding.editLastNameTv.setMaxLines(1);
+        binding.editLastNameTv.setInputType(InputType.TYPE_TEXT_FLAG_CAP_WORDS);
+        binding.editFirstNameTv.setMaxLines(1);
+        binding.editFirstNameTv.setInputType(InputType.TYPE_TEXT_FLAG_CAP_WORDS);
 
         if (user != null) {
             binding.editFirstNameTv.setText(user.getFirstName());
