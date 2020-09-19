@@ -1,6 +1,5 @@
 # User Profile - Android Application
 
-<h1>User Profile - Android Application</h1>
 Create a mobile application that appears to have the functionality of a profile page. Data does not need to be saved to a database, but the application should appear to function as expected until refresh/restarted.
 
 <h2>Permissions</h2>
