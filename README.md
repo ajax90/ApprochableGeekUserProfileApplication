@@ -3,12 +3,12 @@
 Create a mobile application that appears to have the functionality of a profile page. Data does not need to be saved to a database, but the application should appear to function as expected until refresh/restarted.
 
 <h2>Permissions</h2>
-•	Camera
+•	Camera <br/>
 •	Gallery
 
 <h2>Libraries</h2>
 {<br/>
-implementation 'de.hdodenhof:circleimageview:3.1.0'
+implementation 'de.hdodenhof:circleimageview:3.1.0' <br/>
 }
 
 ## Installation
