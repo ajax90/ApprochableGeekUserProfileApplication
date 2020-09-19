@@ -8,10 +8,10 @@ public class User implements Serializable {
     private String phone;
     private String email;
     private String bio;
+    private byte[] photoURI;
 
     public User() {
     }
-
 
     public String getFirstName() {
         return firstName;
@@ -51,6 +51,14 @@ public class User implements Serializable {
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    public byte[] getPhotoURI() {
+        return photoURI;
+    }
+
+    public void setPhotoURI(byte[] photoURI) {
+        this.photoURI = photoURI;
     }
 
     public void initUser() {

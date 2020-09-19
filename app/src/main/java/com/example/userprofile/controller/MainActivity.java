@@ -4,7 +4,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -63,13 +66,25 @@ public class MainActivity extends AppCompatActivity {
                 launchDetailsActivity(activityID);
             }
         });
+
+        binding.profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activityID = 4;
+                launchDetailsActivity(activityID);
+            }
+        });
     }
 
     private void initViews() {
-        binding.nameValueTv.setText(user.getFirstName() +" "+user.getLastName());
+        binding.nameValueTv.setText(user.getFirstName() + " " + user.getLastName());
         binding.phoneValueTv.setText(toPhoneNumberFormat(user.getPhone()));
         binding.emailValueTv.setText(user.getEmail());
         binding.introValueTv.setText(user.getBio());
+        if (EditActivity.bytes != null) {
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(EditActivity.bytes, 0, EditActivity.bytes.length);
+            binding.profileImage.setImageBitmap(decodedByte);
+        }
     }
 
     public static String toPhoneNumberFormat(String s) {
@@ -89,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if(requestCode == 99 && resultCode == 100){
+        if (requestCode == 99 && resultCode == 100) {
             user = (User) data.getSerializableExtra(MainActivity.OBJECT_KEY);
             initViews();
         }
