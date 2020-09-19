@@ -64,8 +64,8 @@ public class User implements Serializable {
     public void initUser() {
         this.firstName = "Chaitanya";
         this.lastName = "Deshpande";
-        this.phone = "7042360604";
-        this.email = "chaitudeshpande6@gmail.com";
+        this.phone = "9999999999";
+        this.email = "loremEpsum@gmail.com";
         this.bio = "Hi I'm Chaitanya and I love to build Android and Web Applications";
     }
 

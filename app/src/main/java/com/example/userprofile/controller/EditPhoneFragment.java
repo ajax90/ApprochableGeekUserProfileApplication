@@ -2,18 +2,12 @@ package com.example.userprofile.controller;
 
 import android.os.Bundle;
 import android.telephony.PhoneNumberFormattingTextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.userprofile.R;
 import com.example.userprofile.databinding.FragmentEditPhoneBinding;
 import com.example.userprofile.modal.User;
 
@@ -72,7 +66,7 @@ public class EditPhoneFragment extends Fragment {
         binding.includeLayout.editLabelTv.setText("Phone");
         binding.includeLayout.editValueTv.setText(MainActivity.toPhoneNumberFormat(user.getPhone()));
         binding.includeLayout.editValueTv.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
-        return view ;
+        return view;
     }
 
     @Override

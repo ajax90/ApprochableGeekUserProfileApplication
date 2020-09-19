@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="30dp"
-    android:orientation="vertical"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/email_header_tv"
@@ -20,10 +20,11 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <include layout="@layout/comon_editable_layout"
+    <include
         android:id="@+id/include_layout"
+        layout="@layout/comon_editable_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/email_header_tv"/>
+        android:layout_below="@id/email_header_tv" />
 
 </RelativeLayout>

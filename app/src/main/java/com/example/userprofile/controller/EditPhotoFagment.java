@@ -5,17 +5,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.fragment.app.Fragment;
-
-import com.example.userprofile.databinding.FragmentEditPhoneBinding;
 import com.example.userprofile.databinding.FragmentEditPhotoBinding;
 import com.example.userprofile.modal.User;
-
 import static com.example.userprofile.controller.EditActivity.bytes;
 
 /**
@@ -70,7 +65,7 @@ public class EditPhotoFagment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentEditPhotoBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
-        if(bytes != null){
+        if (bytes != null) {
             Bitmap decodedByte = BitmapFactory.decodeByteArray(EditActivity.bytes, 0, EditActivity.bytes.length);
             binding.photoImageview.setImageBitmap(decodedByte);
         }
@@ -81,7 +76,7 @@ public class EditPhotoFagment extends Fragment {
                 startActivityForResult(gallery, EditActivity.SELECT_PICTURE);
             }
         });
-        return view ;
+        return view;
     }
 
     @Override

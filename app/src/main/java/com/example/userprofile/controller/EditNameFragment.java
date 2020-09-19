@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.userprofile.R;
 import com.example.userprofile.databinding.FragmentEditNameBinding;
 import com.example.userprofile.modal.User;
 
@@ -69,8 +68,6 @@ public class EditNameFragment extends Fragment {
             binding.editFirstNameTv.setText(user.getFirstName());
             binding.editLastNameTv.setText(user.getLastName());
         }
-
-
         return view;
     }
 

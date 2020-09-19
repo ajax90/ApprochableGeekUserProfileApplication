@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="30dp"
-    android:orientation="vertical"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/bio_header_tv"
@@ -21,17 +21,17 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/bio_textview"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:id="@+id/bio_textview"
-        android:textColor="@android:color/black"
-        android:gravity="start"
-        android:textStyle="bold"
-        android:background="@drawable/border"
-        android:textColorHint="@android:color/darker_gray"
         android:layout_below="@id/bio_header_tv"
-        android:hint="@string/bio_hint"
+        android:background="@drawable/border"
         android:ellipsize="end"
-        android:padding="10dp"/>
+        android:gravity="start"
+        android:hint="@string/bio_hint"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        android:textStyle="bold" />
 
 </RelativeLayout>

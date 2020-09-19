@@ -7,23 +7,23 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Base64;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 
-import com.example.userprofile.R;
 import com.example.userprofile.databinding.ActivityMainBinding;
 import com.example.userprofile.modal.User;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    public static final String OBJECT_KEY = "USER_OBJECT";
-    public static final String INT_KEY = "ACTIVITY_ID";
     private static final String PHONE_FORMAT = "(%s) %s-%s";
     private int activityID;
     public User user;
+    public static final String OBJECT_KEY = "USER_OBJECT";
+    public static final String INT_KEY = "ACTIVITY_ID";
+    public static final int REQUEST_CODE = 99;
+    public static final int RESULT_CODE = 100;
+    public static final int IMAGE_QUALITY = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 activityID = 0;
                 launchDetailsActivity(activityID);
-                Log.d("demo", "name");
             }
         });
 
@@ -99,12 +98,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, EditActivity.class);
         intent.putExtra(OBJECT_KEY, user);
         intent.putExtra(INT_KEY, id);
-        startActivityForResult(intent, 99);
+        startActivityForResult(intent, REQUEST_CODE);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == 99 && resultCode == 100) {
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_CODE) {
             user = (User) data.getSerializableExtra(MainActivity.OBJECT_KEY);
             initViews();
         }

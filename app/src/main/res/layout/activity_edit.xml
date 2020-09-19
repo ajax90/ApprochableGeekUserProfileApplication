@@ -4,28 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:padding="0dp"
         android:layout_marginTop="10dp"
-        android:gravity="end">
+        android:gravity="end"
+        android:padding="0dp">
+
         <ImageView
             android:id="@+id/back_button"
             android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_left_arrow"
-            android:paddingLeft="0dp"/>
+            android:paddingLeft="0dp"
+            android:src="@drawable/ic_left_arrow" />
     </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout
+        android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:id="@+id/fragmentContainer"
-        android:padding="30dp"/>
+        android:padding="30dp" />
 
     <Button
         android:id="@+id/update_btn"

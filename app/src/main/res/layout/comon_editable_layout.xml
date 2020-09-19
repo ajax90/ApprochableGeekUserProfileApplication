@@ -4,30 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:background="@drawable/border"
     android:gravity="center_vertical"
+    android:orientation="vertical"
     android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:background="@drawable/border">
+    android:paddingRight="10dp">
 
     <TextView
+        android:id="@+id/edit_label_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="First Name"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
-        android:id="@+id/edit_label_tv"
-        android:textSize="20sp"
+        android:layout_marginTop="5dp"
+        android:text="First Name"
         android:textColor="@android:color/darker_gray"
-        android:textStyle="bold"/>
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/edit_value_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Chaitanya"
         android:paddingTop="0dp"
-        android:id="@+id/edit_value_tv"
-        android:textSize="20sp"
+        android:text="Chaitanya"
         android:textColor="@android:color/black"
-        android:textStyle="bold"/>
+        android:textSize="20sp"
+        android:textStyle="bold" />
 </LinearLayout>

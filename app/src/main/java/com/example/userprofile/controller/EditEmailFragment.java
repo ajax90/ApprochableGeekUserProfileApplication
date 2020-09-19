@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.userprofile.databinding.FragmentEditEmailBinding;
-import com.example.userprofile.databinding.FragmentEditPhoneBinding;
 import com.example.userprofile.modal.User;
 
 /**
@@ -67,7 +66,7 @@ public class EditEmailFragment extends Fragment {
         binding.includeLayout.editLabelTv.setText("Your email address");
         binding.includeLayout.editValueTv.setText(user.getEmail());
         binding.includeLayout.editValueTv.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
-        return view ;
+        return view;
     }
 
 }

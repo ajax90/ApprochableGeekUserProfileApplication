@@ -1,16 +1,13 @@
 package com.example.userprofile.controller;
 
 import android.os.Bundle;
-import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.userprofile.R;
 import com.example.userprofile.databinding.FragmentEditBioBinding;
-import com.example.userprofile.databinding.FragmentEditPhoneBinding;
 import com.example.userprofile.modal.User;
 
 /**
