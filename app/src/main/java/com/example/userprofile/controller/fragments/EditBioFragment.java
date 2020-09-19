@@ -1,25 +1,25 @@
-package com.example.userprofile.controller;
+package com.example.userprofile.controller.fragments;
 
 import android.os.Bundle;
-import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.userprofile.databinding.FragmentEditPhoneBinding;
+import com.example.userprofile.controller.activities.MainActivity;
+import com.example.userprofile.databinding.FragmentEditBioBinding;
 import com.example.userprofile.modal.User;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link EditPhoneFragment#newInstance} factory method to
+ * Use the {@link EditBioFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 
-public class EditPhoneFragment extends Fragment {
+public class EditBioFragment extends Fragment {
 
-    private FragmentEditPhoneBinding binding;
+    private FragmentEditBioBinding binding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,7 +28,7 @@ public class EditPhoneFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private User user;
 
-    public EditPhoneFragment() {
+    public EditBioFragment() {
         // Required empty public constructor
     }
 
@@ -41,8 +41,8 @@ public class EditPhoneFragment extends Fragment {
      * @return A new instance of fragment EditNameFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static EditPhoneFragment newInstance(String param1, String param2) {
-        EditPhoneFragment fragment = new EditPhoneFragment();
+    public static EditBioFragment newInstance(String param1, String param2) {
+        EditBioFragment fragment = new EditBioFragment();
         Bundle args = new Bundle();
         args.putSerializable(ARG_PARAM1, param1);
         fragment.setArguments(args);
@@ -61,11 +61,11 @@ public class EditPhoneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentEditPhoneBinding.inflate(getLayoutInflater());
+        binding = FragmentEditBioBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
-        binding.includeLayout.editLabelTv.setText("Phone");
-        binding.includeLayout.editValueTv.setText(MainActivity.toPhoneNumberFormat(user.getPhone()));
-        binding.includeLayout.editValueTv.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
+        if (user.getBio() != null) {
+            binding.bioTextview.setText(user.getBio());
+        }
         return view;
     }
 

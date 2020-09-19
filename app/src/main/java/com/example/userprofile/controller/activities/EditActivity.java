@@ -1,4 +1,4 @@
-package com.example.userprofile.controller;
+package com.example.userprofile.controller.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -15,6 +15,11 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.userprofile.R;
+import com.example.userprofile.controller.fragments.EditBioFragment;
+import com.example.userprofile.controller.fragments.EditEmailFragment;
+import com.example.userprofile.controller.fragments.EditNameFragment;
+import com.example.userprofile.controller.fragments.EditPhoneFragment;
+import com.example.userprofile.controller.fragments.EditPhotoFagment;
 import com.example.userprofile.databinding.ActivityEditBinding;
 import com.example.userprofile.modal.User;
 
@@ -23,7 +28,7 @@ import java.io.ByteArrayOutputStream;
 
 public class EditActivity extends AppCompatActivity {
 
-    private com.example.userprofile.databinding.ActivityEditBinding binding;
+    private ActivityEditBinding binding;
     private User user;
     private int id;
     private Fragment fragment;

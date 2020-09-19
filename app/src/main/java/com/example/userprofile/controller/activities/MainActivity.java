@@ -1,4 +1,4 @@
-package com.example.userprofile.controller;
+package com.example.userprofile.controller.activities;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;

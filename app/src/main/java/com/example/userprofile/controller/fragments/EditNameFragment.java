@@ -1,24 +1,26 @@
-package com.example.userprofile.controller;
+package com.example.userprofile.controller.fragments;
 
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.fragment.app.Fragment;
-
-import com.example.userprofile.databinding.FragmentEditBioBinding;
+import com.example.userprofile.controller.activities.MainActivity;
+import com.example.userprofile.databinding.FragmentEditNameBinding;
 import com.example.userprofile.modal.User;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link EditBioFragment#newInstance} factory method to
+ * Use the {@link EditNameFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 
-public class EditBioFragment extends Fragment {
+public class EditNameFragment extends Fragment {
 
-    private FragmentEditBioBinding binding;
+    private FragmentEditNameBinding binding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,7 +29,7 @@ public class EditBioFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private User user;
 
-    public EditBioFragment() {
+    public EditNameFragment() {
         // Required empty public constructor
     }
 
@@ -40,8 +42,8 @@ public class EditBioFragment extends Fragment {
      * @return A new instance of fragment EditNameFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static EditBioFragment newInstance(String param1, String param2) {
-        EditBioFragment fragment = new EditBioFragment();
+    public static EditNameFragment newInstance(String param1, String param2) {
+        EditNameFragment fragment = new EditNameFragment();
         Bundle args = new Bundle();
         args.putSerializable(ARG_PARAM1, param1);
         fragment.setArguments(args);
@@ -60,10 +62,12 @@ public class EditBioFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentEditBioBinding.inflate(getLayoutInflater());
+        binding = FragmentEditNameBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
-        if (user.getBio() != null) {
-            binding.bioTextview.setText(user.getBio());
+
+        if (user != null) {
+            binding.editFirstNameTv.setText(user.getFirstName());
+            binding.editLastNameTv.setText(user.getLastName());
         }
         return view;
     }
